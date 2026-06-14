@@ -115,7 +115,7 @@ export const socialLinks: SocialLink[] = [
 
 export const aboutContent: AboutContent = {
   summary:
-    "QA Automation Engineer with 4+ years of experience delivering high-quality software through robust test automation, API validation, and CI/CD integration. Passionate about building scalable frameworks that empower teams to ship with confidence.",
+    "QA Automation Engineer with 5+ years of experience delivering high-quality software through robust test automation, API validation, and CI/CD integration. Passionate about building scalable frameworks that empower teams to ship with confidence.",
   highlights: [
     "Automation",
     "API Testing",
