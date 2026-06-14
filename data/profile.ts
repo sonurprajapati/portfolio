@@ -126,7 +126,7 @@ export const aboutContent: AboutContent = {
 };
 
 export const achievements: Achievement[] = [
-  { value: "4+", label: "Years Experience", icon: "calendar" },
+  { value: "5+", label: "Years Experience", icon: "calendar" },
   { value: "140+", label: "Production Bugs", icon: "bug" },
   { value: "5+", label: "Automation Frameworks", icon: "code" },
   { value: "6+", label: "Certifications", icon: "award" },

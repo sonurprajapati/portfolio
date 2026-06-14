@@ -22,7 +22,7 @@ export function About() {
               className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
             >
               Quality Engineer with{" "}
-              <span className="gradient-text">4+ Years</span> of Experience
+              <span className="gradient-text">5+ Years</span> of Experience
             </h2>
           </div>
         </ScrollReveal>
