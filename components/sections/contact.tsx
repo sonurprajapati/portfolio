@@ -33,8 +33,8 @@ export function Contact() {
       <a
         key={link.name}
         href={link.url}
-        target={link.icon === "email" || link.icon === "location" ? undefined : "_blank"}
-        rel={link.icon === "email" || link.icon === "location" ? undefined : "noopener noreferrer"}
+        target={link.icon === "email" ? undefined : "_blank"}
+        rel={link.icon === "email" ? undefined : "noopener noreferrer"}
         className="glass flex items-center gap-4 rounded-2xl p-6 w-full transition-all duration-300 hover:shadow-md"
       >
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">

@@ -58,7 +58,14 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <MapPin className="h-4 w-4" aria-hidden="true" />
-            {personalInfo.location}
+            <a
+              href="https://maps.google.com/?q=Mumbai,India"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              {personalInfo.location}
+            </a>
           </motion.div>
 
           <motion.p
