@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sonu Prajapati — Portfolio Website
+
+Premium personal portfolio for **Sonu Prajapati**, QA Automation Engineer / SDET.
+
+## Tech Stack
+
+- **Next.js 15+** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **shadcn/ui**
+- **Framer Motion**
+- **Lucide Icons**
+- **Vercel Analytics & Speed Insights**
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/           # Next.js App Router pages & layouts
+components/    # Reusable UI & section components
+data/          # All portfolio content (profile.ts)
+lib/           # Utilities, metadata, blog helpers
+public/        # Static assets
+```
 
-## Learn More
+## Content Management
 
-To learn more about Next.js, take a look at the following resources:
+All portfolio content lives in `data/profile.ts`. Update personal info, skills, experience, projects, certifications, education, achievements, social links, and blog metadata in one place — sections consume data dynamically.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push to GitHub
+2. Import the repo in [Vercel](https://vercel.com)
+3. Deploy — no extra configuration needed
 
-## Deploy on Vercel
+Analytics and Speed Insights activate automatically on Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Dark / Light mode
+- Glassmorphism + gradient design
+- SEO (metadata, Open Graph, Twitter Cards, sitemap, robots.txt, JSON-LD)
+- Scroll progress bar, back-to-top, page transitions, scroll reveal animations
+- Fully responsive & accessibility compliant
+- Recruiter-focused UX
+
+## License
+
+Private — All rights reserved.
