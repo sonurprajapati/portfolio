@@ -180,7 +180,7 @@ export const certifications: Certification[] = [
     name: "ISTQB CTFL v4.0",
     issuer: "ISTQB",
     featured: true,
-    year: "2024",
+    year: "2026",
   },
   {
     name: "SQL Fundamentals",
