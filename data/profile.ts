@@ -22,6 +22,7 @@ export interface Achievement {
   value: string;
   label: string;
   icon: string;
+  description?: string;
 }
 
 export interface SkillCategory {
@@ -47,12 +48,18 @@ export interface Experience {
 
 export interface Project {
   id: string;
+  emoji: string;
   name: string;
   description: string;
+  whatIBuilt: string;
   techStack: string[];
+  features: string[];
+  architecture: string[];
   githubUrl: string;
   demoUrl: string;
   screenshot: string;
+  logoUrl?: string;
+  screenshotsFolderUrl?: string;
 }
 
 export interface Education {
@@ -115,63 +122,64 @@ export const socialLinks: SocialLink[] = [
 
 export const aboutContent: AboutContent = {
   summary:
-    "QA Automation Engineer with 5+ years of experience delivering high-quality software through robust test automation, API validation, and CI/CD integration. Passionate about building scalable frameworks that empower teams to ship with confidence.",
+    "I'm a QA Automation Engineer focused on building reliable, maintainable test automation for web, API, and mobile applications. I enjoy turning repetitive testing into scalable automation, designing reusable frameworks, and integrating tests into CI/CD pipelines. My current focus is Playwright, TypeScript, API automation, and SDET practices.",
   highlights: [
-    "Automation",
-    "API Testing",
-    "Mobile Testing",
+    "Playwright",
+    "TypeScript",
+    "API Automation",
     "CI/CD",
-    "Agile",
+    "SDET",
+    "Mobile Testing",
   ],
 };
 
 export const achievements: Achievement[] = [
-  { value: "5+", label: "Years Experience", icon: "calendar" },
-  { value: "140+", label: "Production Bugs", icon: "bug" },
-  { value: "5+", label: "Automation Frameworks", icon: "code" },
-  { value: "6+", label: "Certifications", icon: "award" },
-  { value: "2+", label: "Companies", icon: "building" },
+  {
+    value: "⚙️",
+    label: "Framework Design",
+    icon: "wrench",
+    description: "Reusable and maintainable automation frameworks",
+  },
+  {
+    value: "🤖",
+    label: "Automation",
+    icon: "bot",
+    description: "Web • API • Mobile test automation",
+  },
+  {
+    value: "🔄",
+    label: "CI/CD",
+    icon: "refresh",
+    description: "Automated test execution and reporting",
+  },
+  {
+    value: "🐛",
+    label: "Quality Engineering",
+    icon: "bug",
+    description: "Defect analysis and production quality — 140+ issues caught",
+  },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: "Languages",
-    skills: ["Java", "JavaScript", "Dart"],
+    name: "Automation",
+    skills: ["Playwright", "Selenium", "Cypress", "Appium", "Patrol"],
   },
   {
-    name: "Web Automation",
-    skills: ["Selenium", "Cypress"],
+    name: "API & Performance",
+    skills: ["Postman", "REST Assured", "JMeter"],
   },
   {
-    name: "Mobile Automation",
-    skills: ["Appium", "Patrol"],
+    name: "Programming",
+    skills: ["Java", "TypeScript", "JavaScript", "Python", "Dart"],
   },
   {
-    name: "API Testing",
-    skills: ["REST Assured", "Postman"],
-  },
-  {
-    name: "CI/CD",
-    skills: ["Jenkins", "GitHub Actions", "GitLab"],
-  },
-  {
-    name: "Databases",
-    skills: ["MySQL", "PostgreSQL"],
+    name: "Framework & Engineering",
+    skills: ["TestNG", "POM", "Maven", "Allure", "CI/CD"],
   },
   {
     name: "Tools",
-    skills: [
-      "Jira",
-      "TestRail",
-      "TestLink",
-      "Confluence",
-      "Sentry",
-      "Allure",
-    ],
-  },
-  {
-    name: "Platforms",
-    skills: ["Windows", "Linux", "macOS"],
+    skills: ["Jenkins", "GitHub Actions", "Git", "Jira", "MySQL"],
   },
 ];
 
@@ -188,9 +196,9 @@ export const certifications: Certification[] = [
     year: "2023",
   },
   {
-    name: "Automate the Boring Stuff with Python",
+    name: "Cyber-Security and IoT",
     issuer: "Online Course",
-    year: "2022",
+    year: "2021",
   },
   {
     name: "JavaScript & JQuery From Scratch",
@@ -198,12 +206,12 @@ export const certifications: Certification[] = [
     year: "2022",
   },
   {
-    name: "Cybersecurity and IoT",
+    name: "Automate the Boring Stuff with Python",
     issuer: "Online Course",
-    year: "2021",
+    year: "2022",
   },
   {
-    name: "Bootstrap Masterclass",
+    name: "Object-Oriented Programming Using Java",
     issuer: "Online Course",
     year: "2021",
   },
@@ -257,54 +265,79 @@ export const experience: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "playwright-framework",
+    emoji: "🎭",
+    name: "Playwright TypeScript Automation Framework",
+    description: "Scalable E2E automation framework with parallel execution and CI/CD integration.",
+    whatIBuilt:
+      "A scalable end-to-end automation framework designed for maintainable and parallel test execution across multiple browsers, with built-in reporting and CI/CD pipeline integration.",
+    techStack: ["TypeScript", "Playwright", "POM", "Fixtures", "Allure", "CI/CD"],
+    features: [
+      "Page Object Model",
+      "Reusable fixtures",
+      "Web-first assertions",
+      "Parallel execution",
+      "Cross-browser testing",
+      "Screenshots & traces",
+      "Allure reporting",
+      "CI/CD integration",
+    ],
+    architecture: ["Tests", "Page Objects", "Fixtures / Utilities", "Playwright", "Browser"],
+    githubUrl: "https://github.com/sonurprajapati/playwright-typescript-automation-framework",
+    screenshotsFolderUrl: "https://drive.google.com/drive/folders/1lLr-0JMwo3U02sYPww2ligpHb92g5T84?usp=drive_link",
+    demoUrl: "#",
+    screenshot: "/projects/playwright.png",
+    logoUrl: "https://playwright.dev/img/playwright-logo.svg",
+  },
+  {
     id: "selenium-framework",
-    name: "Selenium Framework",
-    description:
-      "Enterprise-grade Selenium WebDriver framework with Page Object Model, parallel execution, and Allure reporting integration.",
-    techStack: ["Java", "Selenium", "TestNG", "Maven", "Allure"],
-    githubUrl: "https://github.com/sonuprajapati/selenium-framework",
+    emoji: "🧪",
+    name: "Selenium Java TestNG Automation Framework",
+    description: "Enterprise-grade WebDriver framework with POM, data-driven tests, and Allure reporting.",
+    whatIBuilt:
+      "A robust enterprise-grade WebDriver framework built on Page Object Model, designed for data-driven, parallel test execution with comprehensive Allure reporting and Jenkins CI/CD integration.",
+    techStack: ["Java", "Selenium", "TestNG", "Maven", "Allure", "Jenkins"],
+    features: [
+      "Page Object Model",
+      "Data-driven testing",
+      "Parallel execution via TestNG",
+      "Cross-browser support",
+      "Allure reporting",
+      "Jenkins CI/CD",
+      "Maven build management",
+      "Reusable base utilities",
+    ],
+    architecture: ["Tests", "Page Objects", "Base Classes", "Selenium WebDriver", "Browser"],
+    githubUrl: "https://github.com/sonurprajapati/selenium-java-testng-automation-framework",
+    screenshotsFolderUrl: "https://drive.google.com/drive/folders/15CLJF7lICtYB6wx46vav3wKwBJcYxTgz?usp=drive_link",
     demoUrl: "#",
     screenshot: "/projects/selenium.png",
-  },
-  {
-    id: "cypress-framework",
-    name: "Cypress Framework",
-    description:
-      "Modern E2E testing framework with custom commands, API intercepts, and CI/CD pipeline integration for fast feedback loops.",
-    techStack: ["JavaScript", "Cypress", "Mocha", "GitHub Actions"],
-    githubUrl: "https://github.com/sonuprajapati/cypress-framework",
-    demoUrl: "#",
-    screenshot: "/projects/cypress.png",
-  },
-  {
-    id: "rest-assured-framework",
-    name: "REST Assured Framework",
-    description:
-      "Comprehensive API testing framework with schema validation, data-driven tests, and Jenkins pipeline for continuous API quality.",
-    techStack: ["Java", "REST Assured", "TestNG", "Jenkins", "JSON Schema"],
-    githubUrl: "https://github.com/sonuprajapati/rest-assured-framework",
-    demoUrl: "#",
-    screenshot: "/projects/rest-assured.png",
+    logoUrl: "https://www.selenium.dev/images/selenium_logo_square_green.png",
   },
   {
     id: "appium-framework",
-    name: "Appium Framework",
-    description:
-      "Cross-platform mobile automation framework supporting Android and iOS with device farm integration and parallel test execution.",
-    techStack: ["Java", "Appium", "TestNG", "BrowserStack", "Allure"],
-    githubUrl: "https://github.com/sonuprajapati/appium-framework",
+    emoji: "📱",
+    name: "Appium Java Mobile Automation Framework",
+    description: "Cross-platform mobile automation for Android & iOS with BrowserStack and parallel execution.",
+    whatIBuilt:
+      "A cross-platform mobile automation framework for Android and iOS, leveraging Appium with cloud device farm integration via BrowserStack, parallel test execution, and full Allure reporting.",
+    techStack: ["Java", "Appium", "TestNG", "BrowserStack", "Allure", "Maven"],
+    features: [
+      "Android & iOS support",
+      "Cross-platform capabilities",
+      "BrowserStack cloud integration",
+      "Parallel device execution",
+      "Page Object Model",
+      "Allure reporting",
+      "Device farm support",
+      "CI/CD pipeline",
+    ],
+    architecture: ["Tests", "Page Objects", "Appium Driver", "BrowserStack / Device Farm", "Android / iOS"],
+    githubUrl: "https://github.com/sonurprajapati/appium-java-test-automation-framework",
+    screenshotsFolderUrl: "https://drive.google.com/drive/folders/1zyjEWPrjkVKbYnbXW8H_Jlyn_Pm9fSY7?usp=drive_link",
     demoUrl: "#",
     screenshot: "/projects/appium.png",
-  },
-  {
-    id: "flutter-patrol-framework",
-    name: "Flutter Patrol Framework",
-    description:
-      "Native Flutter integration testing framework using Patrol for widget tests, native automation, and Firebase Test Lab deployment.",
-    techStack: ["Dart", "Flutter", "Patrol", "Firebase Test Lab", "Allure"],
-    githubUrl: "https://github.com/sonuprajapati/flutter-patrol-framework",
-    demoUrl: "#",
-    screenshot: "/projects/patrol.png",
+    logoUrl: "https://avatars.githubusercontent.com/u/3221291?s=200&v=4",
   },
 ];
 

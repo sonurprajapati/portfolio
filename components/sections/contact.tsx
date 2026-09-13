@@ -1,86 +1,75 @@
 "use client";
 
-import { Mail, MapPin } from "lucide-react";
+import { Mail, FileDown } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons/social";
-import { personalInfo, socialLinks } from "@/data/profile";
+import { personalInfo } from "@/data/profile";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { Button } from "@/components/ui/button";
 
-const iconMap = {
-  linkedin: LinkedInIcon,
-  github: GitHubIcon,
-  email: Mail,
-  location: MapPin,
-};
+const links = [
+  {
+    label: "GitHub",
+    href: "https://github.com/sonurprajapati",
+    icon: GitHubIcon,
+    variant: "secondary" as const,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/sonuprajapati",
+    icon: LinkedInIcon,
+    variant: "secondary" as const,
+  },
+  {
+    label: "Resume",
+    href: personalInfo.resumeUrl,
+    icon: FileDown,
+    variant: "outline" as const,
+  },
+  {
+    label: "Email",
+    href: `mailto:${personalInfo.email}`,
+    icon: Mail,
+    variant: "outline" as const,
+  },
+];
 
 export function Contact() {
-  const row1 = socialLinks.filter(
-    (l) => l.icon === "linkedin" || l.icon === "github"
-  );
-  const row2 = socialLinks.filter(
-    (l) => l.icon === "email" || l.icon === "location"
-  );
-
-  const renderCard = (link: (typeof socialLinks)[number]) => {
-    const Icon = iconMap[link.icon];
-    const subtitle =
-      link.icon === "email"
-        ? personalInfo.email
-        : link.icon === "location"
-        ? personalInfo.location
-        : link.url.replace("https://", "");
-
-    return (
-      <a
-        key={link.name}
-        href={link.url}
-        target={link.icon === "email" ? undefined : "_blank"}
-        rel={link.icon === "email" ? undefined : "noopener noreferrer"}
-        className="glass flex items-center gap-4 rounded-2xl p-6 w-full transition-all duration-300 hover:shadow-md"
-      >
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-          <Icon className="h-6 w-6" aria-hidden="true" />
-        </div>
-        <div className="min-w-0">
-          <p className="text-sm font-medium">{link.name}</p>
-          <p className="text-xs text-muted-foreground truncate">{subtitle}</p>
-        </div>
-      </a>
-    );
-  };
-
   return (
     <section
       id="contact"
-      className="section-padding"
+      className="section-padding gradient-bg"
       aria-labelledby="contact-heading"
     >
       <div className="container-max">
         <ScrollReveal>
-          <div className="text-center">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-medium uppercase tracking-widest text-primary">
-              Get in Touch
+              Contact
             </p>
             <h2
               id="contact-heading"
               className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
             >
-              Let&apos;s Connect
+              Let&apos;s Build Quality Together
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-              Open to QA Automation, SDET, and quality engineering opportunities.
-              Reach out for collaborations or to discuss your testing needs.
+              Interested in QA automation, SDET opportunities, or testing engineering? I&apos;d love to connect.
             </p>
-          </div>
-        </ScrollReveal>
 
-        <ScrollReveal delay={0.1} className="mx-auto mt-12 w-full max-w-2xl">
-          {/* Row 1: LinkedIn & GitHub */}
-          <div className="grid grid-cols-2 gap-6">
-            {row1.map(renderCard)}
-          </div>
-          {/* Row 2: Email & Location */}
-          <div className="grid grid-cols-2 gap-6 mt-6">
-            {row2.map(renderCard)}
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              {links.map(({ label, href, icon: Icon, variant }) => (
+                <Button key={label} asChild variant={variant} size="lg">
+                  <a
+                    href={href}
+                    target={href.startsWith("mailto") ? undefined : "_blank"}
+                    rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    {label}
+                  </a>
+                </Button>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
       </div>

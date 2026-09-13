@@ -32,6 +32,9 @@ export function About() {
             <p className="text-center text-base leading-relaxed text-muted-foreground md:text-lg">
               {aboutContent.summary}
             </p>
+            <p className="mt-4 text-center text-sm text-muted-foreground/70">
+              Professional experience across healthcare and technology products, with hands-on work in web, API, mobile and automation engineering.
+            </p>
             <div className="mt-8 flex flex-wrap justify-center gap-2">
               {aboutContent.highlights.map((item) => (
                 <Badge key={item} variant="secondary" className="px-4 py-1.5">

@@ -77,14 +77,6 @@ export function Blog() {
           ))}
         </StaggerContainer>
 
-        <ScrollReveal delay={0.2}>
-          <div className="mt-8 flex justify-center">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <BookOpen className="h-4 w-4" aria-hidden="true" />
-              More articles coming soon
-            </div>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

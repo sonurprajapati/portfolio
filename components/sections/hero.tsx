@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import {
   MapPin,
-  FileDown,
   FolderKanban,
   Mail,
   Award,
 } from "lucide-react";
+import { GitHubIcon } from "@/components/icons/social";
 import { personalInfo } from "@/data/profile";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -84,21 +84,21 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <Button asChild size="lg">
-              <a href={personalInfo.resumeUrl} target="_blank" rel="noopener noreferrer">
-                <FileDown className="h-4 w-4" aria-hidden="true" />
-                Resume
+              <a href="#projects">
+                <FolderKanban className="h-4 w-4" aria-hidden="true" />
+                Explore Projects
               </a>
             </Button>
             <Button asChild variant="secondary" size="lg">
-              <a href="#projects">
-                <FolderKanban className="h-4 w-4" aria-hidden="true" />
-                Projects
+              <a href="https://github.com/sonurprajapati" target="_blank" rel="noopener noreferrer">
+                <GitHubIcon className="h-4 w-4" aria-hidden="true" />
+                View GitHub
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href="#contact">
                 <Mail className="h-4 w-4" aria-hidden="true" />
-                Contact
+                Contact Me
               </a>
             </Button>
           </motion.div>
