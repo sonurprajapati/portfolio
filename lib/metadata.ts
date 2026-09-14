@@ -15,6 +15,9 @@ export function createMetadata(): Metadata {
     keywords: siteConfig.keywords,
     authors: [{ name: personalInfo.name }],
     creator: personalInfo.name,
+    icons: {
+      icon: "/icon.png",
+    },
     openGraph: {
       type: "website",
       locale: "en_IN",
