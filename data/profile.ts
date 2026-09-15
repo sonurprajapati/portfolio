@@ -171,7 +171,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Programming",
-    skills: ["Java", "TypeScript", "JavaScript", "Python", "Dart"],
+    skills: ["Java", "TypeScript", "JavaScript", "Dart"],
   },
   {
     name: "Framework & Engineering",
